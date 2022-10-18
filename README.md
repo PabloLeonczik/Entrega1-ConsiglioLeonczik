@@ -1,2 +1,2 @@
 # Entrega1-Consiglio-Leonczik
-Falta template Sobre nosotros
+Ya no falta nada
