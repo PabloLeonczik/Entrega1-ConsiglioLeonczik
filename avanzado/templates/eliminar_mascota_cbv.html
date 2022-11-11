@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block holis %}
+<form action={% url 'eliminar_mascota' object.id%} method="POST">
+    {% csrf_token %}
+    <p>
+        Confirma eliminar el animalito {{mascota}} ?
+    <p>
+    
+    <button>Confirmar</button>
+
+</form>
+
+{% endblock holis %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+
+{% block holis %}
+<title>Iniciar sesion</title>
+<form action={% url 'login' %} method="POST">
+    {% csrf_token %}
+    <table>
+    {{formulario}}
+    </table>
+    
+    <button>Iniciar sesion</button>
+
+</form>
+
+{% endblock holis %}

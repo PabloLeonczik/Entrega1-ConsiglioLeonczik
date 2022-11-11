@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block holis %}
+    <a class="navbar-brand" href={% url 'crear_mascotas' %}>Crear mascotas</a>
+    <p>Ver mascotas<p>
+
+    <form action={% url 'ver_mascotas' %} method="GET">
+
+        {{formulario}}
+            
+        <button>Buscar</button>
+        
+    </form>    
+<p>
+    {% for mascota in mascotas %}
+            <li>
+                
+                {{mascota}}
+                <button>
+                <a class="navbar-brand" href={% url 'editar_mascota' mascota.id %}>Editar</a>
+
+                <a class="navbar-brand" href={% url 'eliminar_mascota' mascota.id %}>Eliminar</a>
+                </button>
+            <li>
+    {% endfor %}
+</ul>
+
+    
+{% endblock holis %}

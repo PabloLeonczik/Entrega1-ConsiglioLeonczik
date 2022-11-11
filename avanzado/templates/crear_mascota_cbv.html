@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block holis %}
+<form action={% url 'crear_mascotas' %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    
+    <button>Crear</button>
+
+</form>
+
+{% endblock holis %}
