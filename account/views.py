@@ -14,3 +14,6 @@ def mi_login(request):
         formulario = AuthenticationForm()
     
     return render(request, 'account/login.html', {'formulario': formulario})
+
+def about(request):
+    return render(request, 'about.html', {} )

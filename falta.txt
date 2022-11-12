@@ -1,0 +1,4 @@
+que una persona logueada entre a una pantalla "perfil" donde mustra su info y pueda modificar su info
+imagenes
+
+listo about

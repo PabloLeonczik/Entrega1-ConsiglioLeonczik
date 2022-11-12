@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
 
-
-
-
 {% block holis %}
 <form action={% url 'crear_persona' %} method="POST">
     {% csrf_token %}
