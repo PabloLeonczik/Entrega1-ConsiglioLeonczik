@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from avanzado.models import Mascota
 from avanzado.forms import MascotaFormulario
 
+
 from django.views.generic import ListView
-
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-
+# from django.contrib.auth.mixins import LoginRequiredMixin
 
 def ver_mascotas(request):
     
@@ -13,6 +14,7 @@ def ver_mascotas(request):
     
     return render(request,'ver_mascotas.html', {'mascotas':mascota})
 
+@login_required(login_url= '/account/login')
 def crear_mascotas(request):
     
     if request.method == 'POST':

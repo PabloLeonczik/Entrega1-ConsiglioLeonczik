@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+
+{% block holis %}
+<title>Registro</title>
+<form action={% url 'registrar' %} method="POST">
+    {% csrf_token %}
+    <table>
+    {{formulario}}
+    </table>
+    
+    <button>Registrarse</button>
+
+</form>
+
+{% endblock holis %}
