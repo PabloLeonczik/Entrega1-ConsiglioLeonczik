@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block holis %}
+<title>Editar perfil</title>
+
+<form action={% url 'editar_perfil' %} method="POST" enctype='multipart/form-data'>
+    
+    {% csrf_token %}
+
+    <table>
+    {{formulario}}
+    </table>
+    
+    <button>Guardar</button>
+
+</form>
+
+{% endblock holis %}

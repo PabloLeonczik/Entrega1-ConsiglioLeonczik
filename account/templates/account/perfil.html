@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block holis %}
+
+<title>Perfil</title>
+<p>
+ 
+        <h2>Avatar:</h2>
+        {% if request.user.extensionusuario.avatar %}
+            <img src={{request.user.extensionusuario.avatar.url}} alt="">
+        {% else %}
+            Sin imagen
+        {% endif %}
+
+</p>
+<p>
+    <h1>Mi perfil:</h1>
+    <li>Nombre: {{request.user.first_name}} </li>
+    <li>Apellido: {{request.user.last_name}} </li>
+    <li>Email: {{request.user.email}} </li>
+    <li>Descripción: {{request.user.extensionusuario.descripcion}} </li>
+    <li>Email: {{request.user.extensionusuario.link_pag}} </li>
+</p>
+
+<p>
+    <a href={% url 'editar_perfil'%}>Modificar mis datos</a> <br>
+    <a href={% url 'cambiar_contra'%}>Cambiar contraseña</a>
+</p>
+
+{% endblock holis %}

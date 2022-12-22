@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block holis %}
+<title>Cambiar contraseña</title>
+
+<form action={% url 'cambiar_contra' %} method="POST">
+    
+    {% csrf_token %}
+
+    <table>
+    {{form}}
+    </table>
+    
+    <button>Guardar</button>
+
+</form>
+
+
+{% endblock holis %}
