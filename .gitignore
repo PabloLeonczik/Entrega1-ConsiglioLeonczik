@@ -3,3 +3,4 @@ info.txt
 db.sqlite3
 start.sh
 media
+static/

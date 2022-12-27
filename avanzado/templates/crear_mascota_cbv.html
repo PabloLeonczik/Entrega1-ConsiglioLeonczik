@@ -5,6 +5,7 @@
 <form action={% url 'crear_mascotas' %} method="POST">
     {% csrf_token %}
     <table>
+        {{ form.media }}
         {{form}}
     </table>
     

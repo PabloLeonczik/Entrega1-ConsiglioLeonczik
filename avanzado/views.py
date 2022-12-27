@@ -27,6 +27,7 @@ def crear_mascotas(request):
                     tipo= datos['tipo'], 
                     edad=datos['edad'], 
                     fecha_nacimiento=datos['fecha_nacimiento'],
+                    descripcion=datos['descripcion'],
                     )
             mascota.save()
             return redirect('ver_mascotas')
@@ -51,6 +52,7 @@ def editar_mascota(request, id):
             mascota.tipo = datos['tipo']
             mascota.edad = datos['edad']
             mascota.fecha_nacimiento = datos['fecha_nacimiento']
+            mascota.descripcion = datos['descripcion']
             
             mascota.save()
             return redirect('ver_mascotas')
@@ -60,7 +62,8 @@ def editar_mascota(request, id):
             'nombre':mascota.nombre,
             'tipo':mascota.tipo,
             'edad':mascota.edad,
-            'fecha_nacimiento':mascota.fecha_nacimiento
+            'fecha_nacimiento':mascota.fecha_nacimiento,
+            'descripcion':mascota.descripcion
         }
         )
     
@@ -76,19 +79,17 @@ class ListaMascotas(ListView):
     model= Mascota
     template_name = 'ver_mascotas_cbv.html'
     
-    
-
 class CrearMascota(CreateView):
     model = Mascota
     success_url = '/avanzado/mascotas/'
     template_name = 'crear_mascota_cbv.html'
-    fields = ['nombre', 'tipo', 'edad', 'fecha_nacimiento']
+    fields = ['nombre', 'tipo', 'edad', 'fecha_nacimiento', 'descripcion']
 
 class EditarMascota(UpdateView):
     model = Mascota
     success_url = '/avanzado/mascotas/'
     template_name = 'editar_mascota_cbv.html'
-    fields = ['nombre', 'tipo', 'edad', 'fecha_nacimiento']
+    fields = ['nombre', 'tipo', 'edad', 'fecha_nacimiento', 'descripcion']
     
 class EliminarMascota(DeleteView):
     model = Mascota

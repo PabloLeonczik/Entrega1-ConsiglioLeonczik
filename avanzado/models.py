@@ -7,6 +7,7 @@ class Mascota(models.Model):
     tipo = models.CharField(max_length=20)
     edad = models.IntegerField()
     fecha_nacimiento = models.DateField()
+    descripcion = models.TextField(null=True)
     
     def __str__(self):
         return f'Nombre: {self.nombre} - Tipo: {self.tipo}'
